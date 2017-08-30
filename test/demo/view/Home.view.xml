@@ -1,0 +1,83 @@
+<mvc:View controllerName="DFMultiInput.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:df="it.designfuture.multiinputdialog"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>appTitle}">
+
+				<Text text="{i18n>intro}" class="sapUiSmallMargin" />
+
+				<content>
+					<f:SimpleForm
+						editable="true"
+						layout="ResponsiveGridLayout"
+						title=""
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="4"
+						emptySpanL="4"
+						emptySpanM="4"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1">
+						<f:content>
+							<core:Title text="{i18n>multiInputCheckSelectedTitle}" />
+							<Text text="{i18n>multiInputCheckSelectedText}" class="sapUiSmallMargin" />
+							
+							<Label text="" />
+							<df:MultiInputDialog
+								suggestionItems="{oData>/Customers}"
+								selectDialogItems="{oData>/Customers}"
+								tokens="{oDataModel>/tokens}"
+								selectDialogFilterKeys="ContactName,ContactTitle"
+								selectDialogMultiSelect="true"
+								tokenUpdate="onTokenUpdate">
+								<df:suggestionItems>
+									<core:Item key="{oData>CustomerID}" text="{oData>ContactName}, {oData>ContactTitle}" />
+								</df:suggestionItems>
+								<df:selectDialogItems>
+									<StandardListItem title="{oData>CustomerID}" info="{oData>ContactName}, {oData>ContactTitle}" />
+								</df:selectDialogItems>
+								<df:tokens>
+									<Token key="{oData>CustomerID}" text="{oData>ContactName}, {oData>ContactTitle}" />
+								</df:tokens>
+							</df:MultiInputDialog>
+							
+							<core:Title text="{i18n>multiInputHideSelectedTitle}" />
+							<Text text="{i18n>multiInputHideSelectedText}" class="sapUiSmallMargin" />
+							<Label text="" />
+
+							<df:MultiInputDialog
+								suggestionItems="{oData>/Customers}"
+								selectDialogItems="{oData>/Customers}"
+								tokens="{oDataModel>/tokens}"
+								selectDialogFilterKeys="ContactName,ContactTitle"
+								selectDialogMultiSelect="true"
+								selectDialogMode="HideSelected"
+								tokenUpdate="onTokenUpdate">
+								<df:suggestionItems>
+									<core:Item key="{oData>CustomerID}" text="{oData>ContactName}, {oData>ContactTitle}" />
+								</df:suggestionItems>
+								<df:selectDialogItems>
+									<StandardListItem title="{oData>CustomerID}" info="{oData>ContactName}, {oData>ContactTitle}" />
+								</df:selectDialogItems>
+								<df:tokens>
+									<Token key="{oData>CustomerID}" text="{oData>ContactName}, {oData>ContactTitle}" />
+								</df:tokens>
+							</df:MultiInputDialog>
+							
+						</f:content>
+					</f:SimpleForm>																													
+					
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

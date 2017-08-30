@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>SelectDialogMode</name>
+    <derived/>
+    <documentation>Different mode to filter the Select Dialog</documentation>
+    <enumeration>
+        <value name="CheckSelected">
+            <documentation>Default mode. Items already selected in the multi input will be pre-checked in the Select Dialog</documentation>
+        </value>
+        <value name="HideSelected">
+            <documentation>Items already selected in the multi input will be hided in the Select Dialog</documentation>
+        </value>
+    </enumeration>
+</simple-type>
