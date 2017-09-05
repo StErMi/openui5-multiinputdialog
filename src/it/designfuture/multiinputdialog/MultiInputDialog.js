@@ -256,9 +256,7 @@ sap.ui.define([
 			var aInternalFilters = [];
 			var sSearchValue = oEvent.getParameter("value");
 
-			if( aFilterKeys !== undefined && aFilterKeys !== null && aFilterKeys.length !== 0 && sSearchValue.length > 0 ) {
-				aInternalFilters = this.addSearchFilter(sSearchValue);
-			}
+			aInternalFilters = this.addSearchFilter(sSearchValue);
 
 			var aFilters = aInternalFilters.length > 0 ? new Filter([new Filter(aInternalFilters, false)].concat(this.__valueHelpCurrentFilter), true) : this.__valueHelpCurrentFilter;
 
@@ -272,13 +270,17 @@ sap.ui.define([
 		addSearchFilter: function(sSearchValue) {
 			var aInternalFilters = [];
 			var aFilterKeys = this.getSelectDialogFilterKeys();
-			for( var k in aFilterKeys ) {
-				aInternalFilters.push(new Filter(
-					aFilterKeys[k],
-					FilterOperator.Contains,
-					sSearchValue
-				));
+			
+			if( sSearchValue !== undefined && sSearchValue !== null && sSearchValue.length > 0 ) {
+				for( var k in aFilterKeys ) {
+					aInternalFilters.push(new Filter(
+						aFilterKeys[k],
+						FilterOperator.Contains,
+						sSearchValue
+					));
+				}
 			}
+			
 
 			return aInternalFilters;
 		},
