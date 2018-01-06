@@ -3,9 +3,9 @@
         "icon": "sap-icon://value-help",
         "name": "MultiInput with Value Help",
 		"description": "Easily add a Value Help to a MultiInput with just a line of code!" ,
-		"source": "https://github.com/StErMi/openui5-openui5-multiinputdialog",
+		"source": "https://github.com/StErMi/openui5-multiinputdialog",
 		"documentation": "https://github.com/StErMi/openui5-multiinputdialog/blob/master/README.md",
-		"demo": "https://stermi.github.io/openui5-openui5-multiinputdialog/test/demo/",
+		"demo": "https://stermi.github.io/openui5-multiinputdialog/test/demo/",
 		"version": "0.0.1",
 		"license": "Apache 2.0",
 		"content": {
@@ -19,7 +19,7 @@
 					"id": "MultiInputValueHelp",
 					"name": "MultiInput with Value Help",
 					"description": "Easily add a Value Help to a MultiInput with just a line of code!",
-					"url": "https://stermi.github.io/openui5-openui5-multiinputdialog/test/demo/"
+					"url": "https://stermi.github.io/openui5-multiinputdialog/test/demo/"
 				}]
 			}
 		}
